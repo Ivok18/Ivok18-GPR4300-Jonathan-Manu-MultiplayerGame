@@ -13,4 +13,12 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.CompareTag("Bound"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

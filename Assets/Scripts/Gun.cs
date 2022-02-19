@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireForce;
 
+
+    [PunRPC]
     public void Shoot()
     {
         GameObject bulletGo = Instantiate(bullet.gameObject, transform.position, transform.parent.rotation);
