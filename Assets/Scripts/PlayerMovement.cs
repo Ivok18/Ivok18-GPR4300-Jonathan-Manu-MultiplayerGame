@@ -1,7 +1,5 @@
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,22 +14,29 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (!GetComponent<PhotonView>().IsMine)
+       /* if (!GetComponent<PhotonView>().IsMine)
         {
             return;
-        }
+        }*/
 
-        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        movement.Normalize();
+        //movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //movement.Normalize();
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!GetComponent<PhotonView>().IsMine)
-        {
-            return;
-        }
+        /* if (!GetComponent<PhotonView>().IsMine)
+         {
+             return;
+         }*/
         rb.velocity = movement * moveSpeed * Time.fixedDeltaTime;
       
+    }
+
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        movement = context.ReadValue<Vector2>();
+        
     }
 }

@@ -11,16 +11,18 @@ public class Aim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  
+        rb = GetComponent<Rigidbody2D>();
+        Cursor.visible = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<PhotonView>().IsMine)
+      /*  if (!GetComponent<PhotonView>().IsMine)
         {
             return;
-        }
+        }*/
 
         //gun rotation logic
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -30,10 +32,10 @@ public class Aim : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!GetComponent<PhotonView>().IsMine)
+       /* if (!GetComponent<PhotonView>().IsMine)
         {
             return;
-        }
+        }*/
         rb.rotation = aimAngle;
     }
 }

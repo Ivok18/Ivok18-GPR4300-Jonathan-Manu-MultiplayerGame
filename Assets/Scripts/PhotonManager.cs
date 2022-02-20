@@ -6,6 +6,7 @@ using Photon.Realtime;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
+    /*
     [SerializeField] private GameObject playerPrefab;
     
 
@@ -30,6 +31,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined Room");
         PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(0, 0), Quaternion.identity);
-
     }
+    */
 }

@@ -8,9 +8,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private Bullet bullet;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireForce;
+    
 
-
-    [PunRPC]
+    //[PunRPC]
     public void Shoot()
     {
         GameObject bulletGo = Instantiate(bullet.gameObject, transform.position, transform.parent.rotation);
